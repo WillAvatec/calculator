@@ -6,8 +6,8 @@ html {
     margin-right: auto; /* 1 */
     margin-left:  auto; /* 1 */
     margin-top: 50px;
-  
-    max-width: 445px; /* 2 */
+    width: 75vw;
+    max-width: 500px; /* 2 */
   
     padding-right: 10px; /* 3 */
     padding-left:  10px; /* 3 */
@@ -21,11 +21,8 @@ html {
 
 }
 
-.display, .operators{
-    display: flex;
-}
-
 .display {
+    display: flex;
     border: 1px solid #111010;
     font-size: 30px;
     font-weight: 500;
@@ -49,11 +46,12 @@ html {
 
 .buttons{
     justify-content: stretch;
-    font-size: 80px;
+    font-size: 40px;
     display: grid;
     grid-template-columns: 3fr 1fr;
-    margin: 0 15px;
+    margin: 70px 15px 0;
     gap: 10px;
+    height: 50vh;
 }
 
 
@@ -64,8 +62,14 @@ html {
 }
 
 .operators{
+    display: grid;
     flex-direction: column;
     gap: 2px;
+}
+
+.clear,.delete {
+    background-color: goldenrod;
+    font-size: 30px;
 }
 
 button{
