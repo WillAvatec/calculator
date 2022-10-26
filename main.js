@@ -19,5 +19,5 @@ function divide (a,b){
 // Esta funcion toma un operador y 2 numeros, 
 //  entonces llama una (FUNCION BASICA) y la aplica sobre los numeros. 
 
-function operate(num1, num2) {
+function operate(op, num1, num2) {
 }
