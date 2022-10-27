@@ -42,6 +42,7 @@ html {
 .actual-value{
     display: flex;
     justify-content: right;
+    margin-bottom: 10px;
 }
 
 .buttons{
@@ -87,4 +88,5 @@ button:hover {
 p {
     margin: -1px 5px;
     font-size: 40px;
+    height: 1em;
 }
