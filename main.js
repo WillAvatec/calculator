@@ -29,10 +29,15 @@ function operate(op, num1, num2) {
 }
 
 // Aqui estan todos las referencias al DOM 
+const $ = (valor)=>document.querySelector(valor);
+const $$ = (valor)=>document.querySelectorAll(valor);
 
-const display = document.querySelector(".actual-value");
-const numbers = document.querySelectorAll(".numbers button");
-const operators = document.querySelectorAll(".operators button");
+const display = $(".actual-value");
+const numbers = $$("[data-number]");
+const operators = $$("[data-operator]");
 
-// When clicking over a button show the text in the display
+// Values
 
+const firstOperand = "";
+const secondOperand = "";
+const opActual = "";
