@@ -39,27 +39,41 @@ const clear = document.querySelector(".clear");
 
 // Values
 
-let firstOperand = "";
-const secondOperand = "";
-const opActual = "";
+let firstOperand = "";  
+let secondOperand = "";
+let opActual = "";
 
-// Mostrar en pantalla el primer operador
+// Mostrar en pantalla
 
 function showNumbers(value) {
-    firstOperand += value;
-    display.textContent += value;
-    console.log({value})
-    console.log({firstOperand})
+    if (opActual == ""){
+        firstOperand += value;
+        display.textContent += value;
+        console.log({firstOperand})
+    }
 }
 
-numbers.forEach(number=>number.addEventListener("click",()=>{
-showNumbers(number.textContent)
-}));
+function showOP(value) {
+    if (opActual == "") {opActual = value};
+    display.textContent += value;
+    console.log({opActual})
+}
 
 
 
+numbers.forEach(number => {
+    number.addEventListener("click", ()=>{
+        showNumbers(number.textContent)
+    })
+});
 
+// Operadores
 
+operators.forEach(operator => {
+    operator.addEventListener("click", ()=>{
+        showOP(operator.textContent)
+    })
+});
 
 
 // Limpiar pantalla y operandos
