@@ -32,12 +32,39 @@ function operate(op, num1, num2) {
 const $ = (valor)=>document.querySelector(valor);
 const $$ = (valor)=>document.querySelectorAll(valor);
 
-const display = $(".actual-value");
-const numbers = $$("[data-number]");
-const operators = $$("[data-operator]");
+const display = document.querySelector(".actual-value");
+const numbers = document.querySelectorAll("[data-number]");
+const operators = document.querySelectorAll("[data-operator]");
+const clear = document.querySelector(".clear");
 
 // Values
 
-const firstOperand = "";
+let firstOperand = "";
 const secondOperand = "";
 const opActual = "";
+
+// Mostrar en pantalla el primer operador
+
+function showNumbers(value) {
+    firstOperand += value;
+    display.textContent += value;
+    console.log({value})
+    console.log({firstOperand})
+}
+
+numbers.forEach(number=>number.addEventListener("click",()=>{
+showNumbers(number.textContent)
+}));
+
+
+
+
+
+
+
+// Limpiar pantalla y operandos
+
+clear.addEventListener("click",()=>{
+    firstOperand = "";
+    display.textContent = "";
+})
