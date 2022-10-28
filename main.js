@@ -1,7 +1,7 @@
 //Estas son las funciones basicas
 
 function add (a,b){
-    return a+b;
+    return +a + +b;
 }
 
 function substract(a,b){
@@ -36,6 +36,7 @@ const display = document.querySelector(".actual-value");
 const numbers = document.querySelectorAll("[data-number]");
 const operators = document.querySelectorAll("[data-operator]");
 const clear = document.querySelector(".clear");
+const equal = document.querySelector(".isEqual")
 
 // Values
 
@@ -51,6 +52,11 @@ function showNumbers(value) {
         display.textContent += value;
         console.log({firstOperand})
     }
+    if (opActual != ""){
+        secondOperand += value;
+        display.textContent += value;
+        console.log({secondOperand})
+    }
 }
 
 function showOP(value) {
@@ -58,7 +64,6 @@ function showOP(value) {
     display.textContent += value;
     console.log({opActual})
 }
-
 
 
 numbers.forEach(number => {
@@ -75,10 +80,24 @@ operators.forEach(operator => {
     })
 });
 
+equal.addEventListener("click",()=>{
+    display.textContent = operate(opActual,firstOperand,secondOperand);
+    firstOperand =operate(opActual,firstOperand,secondOperand);
+    secondOperand = "";
+    operator = "";
+})
 
 // Limpiar pantalla y operandos
 
 clear.addEventListener("click",()=>{
     firstOperand = "";
+    secondOperand ="";
+    opActual = "";
     display.textContent = "";
 })
+
+// RANDOM BACKGROUND ON OPERATORS 
+
+const randomColor = "#"+((1<<24)*Math.random()|0).toString(16); 
+
+document.documentElement.style.setProperty('--main-bg-color', randomColor);
